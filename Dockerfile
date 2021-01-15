@@ -1,7 +1,7 @@
 #
 # Builder
 #
-FROM node:10-alpine as builder
+FROM node:14-alpine as builder
 
 WORKDIR /usr/src/app
 
@@ -14,7 +14,7 @@ RUN npm install && npm run build
 #
 # Runtime
 #
-FROM node:10-alpine
+FROM node:14-alpine
 WORKDIR /usr/app
 
 COPY package*.json /usr/app/
