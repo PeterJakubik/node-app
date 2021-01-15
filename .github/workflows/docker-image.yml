@@ -45,3 +45,14 @@ jobs:
           tags: peterjakubik/${{ secrets.TAG_NAME }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+  
+  container-scan:
+    runs-on: ubuntu-latest
+    needs: ['publish-docker']
+    steps:
+    - name: Anchore Container Scan
+      uses: anchore/scan-action@2.0.3
+      with:
+         image: peterjakubik/${{ secrets.TAG_NAME }}
+    - name: grype scan JSON results
+      run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
