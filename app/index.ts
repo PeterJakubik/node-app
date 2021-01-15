@@ -9,7 +9,9 @@ const logger = pino({
 logger.info('hello elastic world');
 logger.info('This is some great stuff');
 logger.info('Some more entries for our logging');
-logger.info('another line');
+logger.info(`multi line
+#line1
+#lastline`);
 logger.info('This never stops');
 logger.info('Logging logging all the way');
 logger.info('I think this is enough');
