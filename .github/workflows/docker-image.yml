@@ -26,11 +26,7 @@ jobs:
  
   publish-docker:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # node-version: [10.x, 12.x, 14.x, 15.x]
-        node-version: [10.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    needs: ['node-app-compile']
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
