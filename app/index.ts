@@ -14,6 +14,9 @@ logger.info('This never stops');
 logger.info('Logging logging all the way');
 logger.info('I think this is enough');
 logger.info('nope, one more!');
+logger.warn('this is a wrning');
+logger.error('this is an error');
+logger.fatal('there can be also a fatal');
 
 
 // rest of the code remains same
