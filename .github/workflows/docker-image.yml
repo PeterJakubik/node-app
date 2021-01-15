@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: docker build . --file Dockerfile --tag peterjakubik/$${{ secrets.TAG_NAME }}
+      run: docker build . --file Dockerfile --tag $${{ secrets.TAG_NAME }}
     - name: Push to Docker Hub
       uses: docker/build-push-action@v1
       with:
