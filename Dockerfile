@@ -22,6 +22,6 @@ RUN npm install --only=prod
 COPY --from=builder /usr/src/app/build/ /usr/app/build
 
 # Remove npm as not needed
-# RUN npm uninstall npm -g
+RUN npm uninstall npm -g
 
 CMD ["node", "./build/index.js"]
