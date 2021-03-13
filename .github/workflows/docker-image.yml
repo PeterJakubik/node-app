@@ -55,7 +55,7 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Anchore Container Scan
-      uses: anchore/scan-action@main
+      uses: anchore/scan-action@v2.0.4
       with:
          image: peterjakubik/${{ secrets.TAG_NAME }}
          acs-report-enable: true
